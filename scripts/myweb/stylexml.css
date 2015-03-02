@@ -1,0 +1,29 @@
+INTERN
+{
+background-color: #ffffff;
+width: 100%;
+}
+
+CEO,MEMBERS
+{
+display: block;
+margin-bottom: 30pt;
+margin-left: 0;
+}
+NAME
+{
+color: #ff0000;
+font-size: 20pt;
+}
+AGE
+{
+color: #0000ff;
+margin-bottom: 25pt;
+font-size: 20pt;
+}
+PRODUCT,OFFICE,WORKAREA,DEPT,YEAR
+{
+display: block;
+color: #000000;
+margin-left: 20pt;
+}

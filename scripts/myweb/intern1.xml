@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="stylexml.css"?>
+<INTERN>
+<CEO>
+  <NAME>Arumugam</NAME>
+  <AGE>26</AGE>
+  <PRODUCT>Mapzeal</PRODUCT>
+  <OFFICE>CIBI</OFFICE>
+</CEO>
+<MEMBERS>
+  <NAME>Gautham</NAME>
+  <AGE>20</AGE>
+  <WORKAREA>Back End</WORKAREA>
+  <DEPT>CSE</DEPT>
+  <YEAR>3rd Year</YEAR>  
+</MEMBERS>
+<MEMBERS>
+  <NAME>Pravin</NAME>
+  <AGE>20</AGE>
+  <WORKAREA>Front End</WORKAREA>
+  <DEPT>CSE</DEPT>
+  <YEAR>3rd Year</YEAR>  
+</MEMBERS>
+</INTERN>

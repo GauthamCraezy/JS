@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+th, td {
+    padding: 5px;
+}
+td{
+width: 150px;
+}</style>
+</head>
+<body>
+
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+
+<br>
+<br>
+
+<table border=1 >
+<tr ><th>Name</th>
+<td id='nameceo' ></td>
+</tr>
+<tr ><th>Age</th>
+<td id='ageceo' ></td>
+</tr>
+<tr ><th>Product</th>
+<td id='productceo' ></td>
+</tr>
+<tr ><th>Office</th>
+<td id='officeceo' ></td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table border=1>
+<tr ><th>Name</th>
+<td id='namemem1'></td>
+</tr>
+<tr ><th>Age</th>
+<td id='agemem1' ></td>
+</tr>
+<tr ><th>Work Area</th>
+<td id='workareamem1' ></td>
+</tr>
+<tr ><th>Dept</th>
+<td id='deptmem1' ></td>
+</tr>
+<tr ><th>Year</th>
+<td id='yearmem1' ></td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table border=1>
+<tr ><th>Name</th>
+<td id='namemem2' ></td>
+</tr>
+<tr ><th>Age</th>
+<td id='agemem2' ></td>
+</tr>
+<tr ><th>Work Area</th>
+<td id='workareamem2' ></td>
+</tr>
+<tr ><th>Dept</th>
+<td id='deptmem2' ></td>
+</tr>
+<tr ><th>Year</th>
+<td id='yearmem2' ></td>
+</tr>
+</table>
+
+<script>
+function loadXMLDoc()
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","intern1.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+var x=xmlDoc.getElementsByTagName("CEO");
+
+  document.getElementById('nameceo').innerHTML=x[0].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+  document.getElementById('ageceo').innerHTML=x[0].getElementsByTagName("AGE")[0].childNodes[0].nodeValue;
+  document.getElementById('productceo').innerHTML=x[0].getElementsByTagName("PRODUCT")[0].childNodes[0].nodeValue;
+  document.getElementById('officeceo').innerHTML=x[0].getElementsByTagName("OFFICE")[0].childNodes[0].nodeValue;
+
+
+var y=xmlDoc.getElementsByTagName("MEMBERS");
+
+  document.getElementById('namemem1').innerHTML=y[0].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+  document.getElementById('agemem1').innerHTML=y[0].getElementsByTagName("AGE")[0].childNodes[0].nodeValue;
+  document.getElementById('workareamem1').innerHTML=y[0].getElementsByTagName("WORKAREA")[0].childNodes[0].nodeValue;
+  document.getElementById('deptmem1').innerHTML=y[0].getElementsByTagName("DEPT")[0].childNodes[0].nodeValue;  
+  document.getElementById('yearmem1').innerHTML=y[0].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;  
+    
+  document.getElementById('namemem2').innerHTML=y[1].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+  document.getElementById('agemem2').innerHTML=y[1].getElementsByTagName("AGE")[0].childNodes[0].nodeValue;
+  document.getElementById('workareamem2').innerHTML=y[1].getElementsByTagName("WORKAREA")[0].childNodes[0].nodeValue;
+  document.getElementById('deptmem2').innerHTML=y[1].getElementsByTagName("DEPT")[0].childNodes[0].nodeValue;  
+  document.getElementById('yearmem2').innerHTML=y[1].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;  
+  
+}
+</script>
+
+</body>
+</html>
