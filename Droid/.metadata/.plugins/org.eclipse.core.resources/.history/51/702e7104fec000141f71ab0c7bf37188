@@ -1,0 +1,194 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+import java.awt.CardLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.Timer;
+
+/**
+ *
+ * @author 12bcs122
+ */
+public final class quiz extends JFrame implements ActionListener{  
+CardLayout card;  
+static int count=0,tmp=0;
+JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;  
+Container c;
+String s;
+    JPanel p1,p2,p3,p4,p5,p11,start;
+    JLabel l1,l2,l3,l4,l5,l11,name;
+    JRadioButton c1,c2,c3,c4,d1,d2,d3,d4,e1,e2,e3,e4,f1,f2,f3,f4,g1,g2,g3,g4;
+    JTextField tname = new JTextField();
+    Timer timer = new Timer(1000,this);
+   
+       void  createradiobutton()
+    {
+          d1=new JRadioButton("Asynchronous JavaScript And XML");
+          d2=new JRadioButton("Advanced Java And Extensions");
+          d3=new JRadioButton("Asynchronous Java And Extended Version");
+          d4=new JRadioButton("None Of The Above");
+          
+          
+          e1=new JRadioButton(" Fellow Research System");
+          e2=new JRadioButton(" Federation of Regulation Society");
+          e3=new JRadioButton(" Fellow of Royal Society");
+          e4=new JRadioButton("  None of the above");
+         
+          
+          f1=new JRadioButton(" 1958");
+          f2=new JRadioButton("1957");
+          f3=new JRadioButton("1959");
+          f4=new JRadioButton("1955");
+          
+          g1=new JRadioButton("MYSQL");
+          g2=new JRadioButton("ORACLE");
+          g3=new JRadioButton("SQLite");
+          g4=new JRadioButton("Excel");
+    }
+    
+    quiz(){  
+    	start = new JPanel();
+    	name = new JLabel("Enter Name");
+    	JButton bt = new JButton("START");
+        createradiobutton();
+          p1=new JPanel();
+          p2=new JPanel();
+          p3=new JPanel();
+          p4=new JPanel();
+          p5=new JPanel();
+          p11=new JPanel();
+          bt.addActionListener(this);
+          start.add(name);
+          start.add(tname);
+          tname.setColumns(10);
+          start.add(bt);
+          
+          c1=new JRadioButton("4");
+          c2=new JRadioButton("5");
+          c3=new JRadioButton("6");
+          c4=new JRadioButton("7");
+          
+          
+        c=getContentPane();  
+        card=new CardLayout(40,30);  
+//create CardLayout object with 40 hor space and 30 ver space  
+        c.setLayout(card);  
+          l1=new JLabel("1. How many strings does a violin have ?");
+        
+        b1=new JButton("next");  
+        b1.setSize(20,20 );
+        b1.setVerticalAlignment(1);
+        b1.setHorizontalAlignment(0);
+        b1.addActionListener(this);  
+               p1.add(l1);
+               p1.add(c1);
+               p1.add(c2);
+               p1.add(c3);
+               p1.add(c4);
+               p1.add(b1);
+              addtopanel();
+               
+       c.add(start); 
+       c.add("a",p1);
+       c.add("b",p2);
+       c.add("c",p3);
+       c.add("d",p4);
+       c.add("e",p5);
+       c.add("k",p11);
+                          
+    }  
+    public void actionPerformed(ActionEvent e) {  
+    	tmp++;
+		if(tmp==1)
+		{timer.start();
+    	 s=tname.getText();
+		}if(tmp==6){
+    if(c2.isSelected())
+                 count++;       
+    if(d1.isSelected())
+             count++;
+    if(e3.isSelected())
+             count++;
+    if(f4.isSelected())
+             count++;
+    if(g4.isSelected())
+             count++;
+
+    l11=new JLabel(s + "'s score is "+count + "in " + timer.toString());
+   p11.add(l11);
+             
+    	}
+        card.next(c);  
+    }  
+   
+    void addtopanel()
+    {
+        l2=new JLabel("2. Expand AJAX");
+        b2=new JButton("Next");
+        b2.addActionListener(this);
+        p2.add(l2);
+        p2.add(d1);
+        p2.add(d2);
+        p2.add(d3);
+        p2.add(d4);
+        p2.add(b2);
+         
+         l3=new JLabel("3.FRS stands for ?");
+        b3=new JButton("Next");
+        b3.addActionListener(this);
+         p3.add(l3);
+         p3.add(e1);
+        p3.add(e2);
+        p3.add(e3);
+        p3.add(e4);
+        p3.add(e2);
+         p3.add(b3);
+        
+         l4=new JLabel(" 4. Goa Shipyard Limited (GSL) was established in ?");
+        b4=new JButton("Next");
+        b4.addActionListener(this);
+        p4.add(l4); p4.add(f1);
+        p4.add(f2);
+        p4.add(f3);
+        p4.add(f4);
+        p4.add(f2);
+         p4.add(b4);
+        
+        
+         l5=new JLabel(" Which of the following is not a Database Managment system?");
+        b5=new JButton("Next");
+        b5.addActionListener(this);
+        p5.add(l5); p5.add(g1);
+        p5.add(g2);
+        p5.add(g3);
+        p5.add(g4);
+        p5.add(g2);
+        p5.add(b5);
+       
+        
+      
+        
+    }
+  
+    public static void main(String[] args) {  
+        quiz cl=new quiz();  
+        cl.setSize(400,400);  
+        cl.setVisible(true);  
+        cl.setDefaultCloseOperation(EXIT_ON_CLOSE);  
+    }  
+
+    
+}  

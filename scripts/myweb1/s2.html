@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+th, td {
+    padding: 5px;
+}
+td{
+width: 150px;
+}</style>
+</head>
+<body>
+
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+
+<br>
+<br>
+
+<script>
+function loadXMLDoc()
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","intern1.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+var y=xmlDoc.getElementsByTagName("MEMBERS");
+for(i=0;i<y.length;i++){
+document.write("<br><br>");
+document.write("<table border=1><tr><th>NAME</th><td width=150>"+y[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue+"</td></tr>");
+document.write("<tr><th>AGE</th><td width=150>"+y[i].getElementsByTagName("AGE")[0].childNodes[0].nodeValue+"</td></tr>");
+document.write("<tr><th>AGE</th><td width=150>"+y[i].getElementsByTagName("WORKAREA")[0].childNodes[0].nodeValue+"</td></tr>");
+document.write("<tr><th>AGE</th><td width=150>"+y[i].getElementsByTagName("DEPT")[0].childNodes[0].nodeValue+"</td></tr>");
+document.write("<tr><th>AGE</th><td width=150>"+y[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue+"</td></tr>");
+document.write("<br><br>");
+}
+
+    
+//  document.getElementById('namemem2').innerHTML=y[1].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+  //document.getElementById('agemem2').innerHTML=y[1].getElementsByTagName("AGE")[0].childNodes[0].nodeValue;
+  //document.getElementById('workareamem2').innerHTML=y[1].getElementsByTagName("WORKAREA")[0].childNodes[0].nodeValue;
+  //document.getElementById('deptmem2').innerHTML=y[1].getElementsByTagName("DEPT")[0].childNodes[0].nodeValue;  
+ // document.getElementById('yearmem2').innerHTML=y[1].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;  
+  
+}
+</script>
+
+</body>
+</html>

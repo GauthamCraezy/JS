@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="stylexml.css"?>
+<INTERN>
+<MEMBERS>
+  <NAME>Gautham</NAME>
+  <AGE>20</AGE>
+  <WORKAREA>Back End</WORKAREA>
+  <DEPT>CSE</DEPT>
+  <YEAR>3rd Year</YEAR>  
+</MEMBERS>
+<MEMBERS>
+  <NAME>Pravin</NAME>
+  <AGE>20</AGE>
+  <WORKAREA>Front End</WORKAREA>
+  <DEPT>CSE</DEPT>
+  <YEAR>3rd Year</YEAR>  
+</MEMBERS>
+
+<MEMBERS>
+  <NAME>Rahul</NAME>
+  <AGE>20</AGE>
+  <WORKAREA>Back End</WORKAREA>
+  <DEPT>CSE</DEPT>
+  <YEAR>2nd Year</YEAR>  
+</MEMBERS>
+<MEMBERS>
+  <NAME>Ashwin</NAME>
+  <AGE>22</AGE>
+  <WORKAREA>Front End</WORKAREA>
+  <DEPT>ECE</DEPT>
+  <YEAR>1st Year</YEAR>  
+</MEMBERS>
+</INTERN>

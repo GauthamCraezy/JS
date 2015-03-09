@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+th, td {
+    padding: 5px;
+width: 150px;
+}</style>
+</head>
+<body>
+
+<button type="button">Change Content</button>
+
+<br>
+<br>
+
+<table  id="myTable">
+  <tr><th id='thd'></th>
+  <td id='tdf'></td>
+  </tr>
+</table>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script >
+$(document).ready(function(){
+
+$('button').click(
+function loadXMLDoc()
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","intern1.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+var y=xmlDoc.getElementsByTagName("MEMBERS");
+for(i=0;i<y.length;i++){
+document.write("<br><br>");
+var name=y[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+var age=y[i].getElementsByTagName("AGE")[0].childNodes[0].nodeValue;
+var workarea=y[i].getElementsByTagName("WORKAREA")[0].childNodes[0].nodeValue;
+var dept=y[i].getElementsByTagName("DEPT")[0].childNodes[0].nodeValue;
+var year=y[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+displayTb(name,age,workarea,dept,year);
+}
+});
+
+var displayTb = function(name,age,workarea,dept,year){
+var table = document.createElement('table');
+table.style.borderCollapse="collapse";
+table.border=1;
+table.style.width="150";
+    var nametr = document.createElement('tr');   
+    var agetr = document.createElement('tr');   
+    var watr = document.createElement('tr');    
+    var depttr = document.createElement('tr');   
+    var yeartr = document.createElement('tr');   
+
+    var nameth = document.createElement('th');
+    var nametd = document.createElement('td');
+    var ageth = document.createElement('th');
+    var agetd = document.createElement('td');
+    var wath = document.createElement('th');
+    var watd = document.createElement('td');
+    var deptth = document.createElement('th');
+    var depttd = document.createElement('td');
+    var yearth = document.createElement('th');
+    var yeartd = document.createElement('td');
+
+    var name1 = document.createTextNode("Name");
+    var name2 = document.createTextNode(name);
+     var age1 = document.createTextNode("Age");
+    var age2 = document.createTextNode(age);
+     var wa1 = document.createTextNode("WorkArea");
+    var wa2 = document.createTextNode(workarea);
+     var dept1 = document.createTextNode("Dept");
+    var dept2 = document.createTextNode(dept);
+     var year1 = document.createTextNode("Year");
+    var year2 = document.createTextNode(year);
+
+    nameth.appendChild(name1);
+    nametd.appendChild(name2);
+    ageth.appendChild(age1);
+    agetd.appendChild(age2);
+    wath.appendChild(wa1);
+    watd.appendChild(wa2);
+    deptth.appendChild(dept1);
+    depttd.appendChild(dept2);
+    yearth.appendChild(year1);
+    yeartd.appendChild(year2);
+       
+
+    nametr.appendChild(nameth);
+    nametr.appendChild(nametd);
+    agetr.appendChild(ageth);
+    agetr.appendChild(agetd);
+    watr.appendChild(wath);
+    watr.appendChild(watd);
+    depttr.appendChild(deptth);
+    depttr.appendChild(depttd);
+    yeartr.appendChild(yearth);
+    yeartr.appendChild(yeartd);
+
+    table.appendChild(nametr);
+    table.appendChild(agetr);
+    table.appendChild(watr);
+    table.appendChild(depttr);
+    table.appendChild(yeartr);
+document.body.appendChild(table);
+};
+});
+   /* newTh.html('Age');
+    newTd.html(age);
+    newTr.append(newTd);
+    $('table').append(newTr);
+    
+    newTh.html('WorkArea');
+    newTd.html(workarea);
+    newTr.append(newTd);
+    $('table').append(newTr);
+    
+    newTh.html('Dept');
+    newTd.html(dept);
+    newTr.append(newTd);
+    $('table').append(newTr);
+    
+    newTh.html('Year');
+    newTd.html(year);
+    newTr.append(newTd);
+    $('table').append(newTr);*/
+      
+
+
+
+</script>
+
+</body>
+</html>

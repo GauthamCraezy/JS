@@ -1,0 +1,268 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+import java.awt.CardLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+/**
+ *
+ * @author 12bcs122
+ */
+public final class quiz extends JFrame implements ActionListener{  
+CardLayout card;  
+static int count=0;
+JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;  
+Container c;
+    JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11;
+    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11;
+    JRadioButton c1,c2,c3,c4,d1,d2,d3,d4,e1,e2,e3,e4,f1,f2,f3,f4,g1,g2,g3,g4;
+          JRadioButton   h1,h2,h3,h4,i1,i2,i3,i4,k1,k2,k3,k4,j1,j2,j3,j4,m1,m2,m3,m4;
+   void  createradiobutton()
+    {
+          d1=new JRadioButton("Asynchronous JavaScript And XML");
+          d2=new JRadioButton("Advanced Java And Extensions");
+          d3=new JRadioButton("Asynchronous Java And Extended Version");
+          d4=new JRadioButton("None Of The Above");
+          
+          
+          e1=new JRadioButton(" Vnet");
+          e2=new JRadioButton(" Inet");
+          e3=new JRadioButton("ARPANET");
+          e4=new JRadioButton("NSF Net");
+          
+          
+          f1=new JRadioButton("Title");
+          f2=new JRadioButton("Shop");
+          f3=new JRadioButton(" Menu");
+          f4=new JRadioButton("Start");
+          
+          
+          g1=new JRadioButton(" England");
+          g2=new JRadioButton(" Italy");
+          g3=new JRadioButton(" USA");
+          g4=new JRadioButton("Switzerland");
+          
+          
+         
+          h1=new JRadioButton("Singapore");
+          h2=new JRadioButton("Malaysia");
+          h3=new JRadioButton("  Paris");
+          h4=new JRadioButton(" New York");
+          
+          
+          i1=new JRadioButton(" Chandra Gupta");
+          i2=new JRadioButton("Chandra Gupta II");
+          i3=new JRadioButton(" Chandra Gupta Maurya");
+          i4=new JRadioButton("Ashoka");
+          
+          
+          j1=new JRadioButton(" Fellow Research System");
+          j2=new JRadioButton(" Federation of Regulation Society");
+          j3=new JRadioButton(" Fellow of Royal Society");
+          j4=new JRadioButton("  None of the above");
+         
+          
+          k1=new JRadioButton(" 1958 in Tokyo");
+          k2=new JRadioButton("1962 in Jakarta");
+          k3=new JRadioButton(" 1966 in Bangkok");
+          k4=new JRadioButton(" 1970 in Bangkok");
+          
+          
+          m1=new JRadioButton(" 1958");
+          m2=new JRadioButton("1957");
+          m3=new JRadioButton("1959");
+          m4=new JRadioButton("1955");
+    }
+    
+    quiz(){  
+        createradiobutton();
+          p1=new JPanel();
+          p2=new JPanel();
+          p3=new JPanel();
+          p4=new JPanel();
+          p5=new JPanel();
+          p6=new JPanel();
+          p7=new JPanel();
+          p8=new JPanel();
+          p9=new JPanel();
+          p10=new JPanel();
+          p11=new JPanel();
+          c1=new JRadioButton("4");
+          c2=new JRadioButton("5");
+          c3=new JRadioButton("6");
+          c4=new JRadioButton("7");
+          
+        c=getContentPane();  
+        card=new CardLayout(40,30);  
+//create CardLayout object with 40 hor space and 30 ver space  
+        c.setLayout(card);  
+          l1=new JLabel("1. How many strings does a violin have ?");
+        
+        b1=new JButton("next");  
+        b1.setSize(20,20 );
+        b1.setVerticalAlignment(1);
+        b1.setHorizontalAlignment(0);
+        b1.addActionListener(this);  
+               p1.add(l1);
+               p1.add(c1);
+               p1.add(c2);
+               p1.add(c3);
+               p1.add(c4);
+               p1.add(b1);
+              addtopanel();
+               
+              
+       c.add("a",p1);
+       c.add("b",p2);
+       c.add("c",p3);
+       c.add("d",p4);
+       c.add("e",p5);
+       c.add("f",p6);
+       c.add("g",p7);
+       c.add("h",p8);
+       c.add("i",p9);
+       c.add("j",p10);
+       c.add("k",p11);
+                          
+    }  
+    public void actionPerformed(ActionEvent e) {  
+    if(d1.isSelected())
+             count++;
+    if(e2.isSelected())
+             count++;
+    if(c1.isSelected())
+             count++;
+    if(f4.isSelected())
+             count++;
+    if(g3.isSelected())
+             count++;
+    if(h1.isSelected())
+             count++;
+    if(i4.isSelected())
+             count++;
+             
+    
+        card.next(c);  
+    }  
+   
+    void addtopanel()
+    {
+        l2=new JLabel("2. Expand AJAX");
+        b2=new JButton("Next");
+        b2.addActionListener(this);
+        p2.add(l2);
+        p2.add(d1);
+        p2.add(d2);
+        p2.add(d3);
+        p2.add(d4);
+        p2.add(b2);
+         
+         l3=new JLabel("3.FRS stands for ?");
+        b3=new JButton("Next");
+        b3.addActionListener(this);
+         p3.add(l3);
+         p3.add(e1);
+        p3.add(e2);
+        p3.add(e3);
+        p3.add(e4);
+        p3.add(e2);
+         p3.add(b3);
+        
+         l4=new JLabel(" ");
+        b4=new JButton("Next");
+        b4.addActionListener(this);
+        p4.add(l4); p4.add(f1);
+        p4.add(f2);
+        p4.add(f3);
+        p4.add(f4);
+        p4.add(f2);
+         p4.add(b4);
+        
+        
+         l5=new JLabel(" Which one of the following countries is said to be the Home of Direct Democracy ?");
+        b5=new JButton("Next");
+        b5.addActionListener(this);
+        p5.add(l5); p5.add(g1);
+        p5.add(g2);
+        p5.add(g3);
+        p5.add(g4);
+        p5.add(g2);
+        p5.add(b5);
+       
+        
+         l6=new JLabel("Chanakya was the prime minister of ?");
+        b6=new JButton("Next");
+        b6.addActionListener(this);
+         p6.add(l6);p6.add(h1);
+        p6.add(h2);
+        p6.add(h3);
+        p6.add(h4);
+        p6.add(h2);
+       p6.add(b6);
+       
+         l7=new JLabel(" G20 Finance Ministers meeting was held on 19 February at?");
+        b7=new JButton("Next");
+        b7.addActionListener(this);
+        p7.add(l7); p7.add(i1);
+        p7.add(i2);
+        p7.add(i3);
+        p7.add(i4);
+        p7.add(i2);
+        p7.add(b7);
+         
+        
+         l8=new JLabel("10. ");
+        b8=new JButton("Next");
+        b8.addActionListener(this);
+        p8.add(l8); p8.add(l8); p8.add(j1);
+        p8.add(j2);
+        p8.add(j3);
+        p8.add(j4);
+        
+        p8.add(b8);
+         
+         l9=new JLabel("");
+        b9=new JButton("Next");
+        b9.addActionListener(this);
+        p9.add(l9); p9.add(k1);
+        p9.add(k2);
+        p9.add(k3);
+        p9.add(k4);
+      
+        p9.add(b9);
+         l10=new JLabel("9. Goa Shipyard Limited (GSL) was established in ?");
+        b10=new JButton("Next");
+        b10.addActionListener(this);
+        p10.add(l10); p10.add(m1);
+        p10.add(m2);
+        p10.add(m3);
+        p10.add(m4);
+       
+        p10.add(b10);
+        
+        
+         l11=new JLabel("your score is "+count);
+        p11.add(l11);
+    }
+  
+    public static void main(String[] args) {  
+        quiz cl=new quiz();  
+        cl.setSize(400,400);  
+        cl.setVisible(true);  
+        cl.setDefaultCloseOperation(EXIT_ON_CLOSE);  
+    }  
+
+    
+}  

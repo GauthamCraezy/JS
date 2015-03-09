@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+th, td {
+    padding: 20px;
+width: 100px;
+}</style>
+
+</head>
+<body>
+</head>
+
+<body>
+
+
+<button type="button" id='btn'>Change Content</button>
+
+<br>
+<br>
+
+<div id = "orginal">
+
+<table id = "tableb" border=1>
+	<tr>
+		<th>Name</th>
+		<td ></td>
+	</tr>
+		<tr>
+		<th>Age</th>
+		<td ></td>
+	</tr>
+		<tr>
+		<th>WorkArea</th>
+		<td ></td>
+	</tr>
+	</tr>
+		<tr>
+		<th>Dept</th>
+		<td></td>
+	</tr>
+	</tr>
+		<tr>
+		<th>Year</th>
+		<td></td>
+	</tr>
+	</table>
+	</div>
+<div id = "replicate1">
+</div>
+
+<br>
+<br>
+
+<div id = "replicate2">
+</div>
+<br>
+<br>
+
+<div id = "replicate3">
+</div>
+
+<br>
+<br>
+
+<div id = "replicate4">
+</div>
+
+</div>
+
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+//the variable to be appended here
+
+var Name = new Array(4);
+var WorkArea = new Array(4);
+var Age = new Array(4);
+var Dept = new Array(4);
+var Year = new Array(4);
+var i=0;
+
+$.ajax({
+type: "GET",
+url: "intern1.xml",
+dataType: "xml",
+success: function(xml) {
+
+$(xml).find('MEMBERS').each(function(){
+ Name[i] = $(this).find('NAME').text();
+Age[i] = $(this).find('AGE').text();
+WorkArea[i] = $(this).find('WORKAREA').text();
+Dept[i] = $(this).find('DEPT').text();
+Year[i] = $(this).find('YEAR').text();
+i++;
+
+});
+
+$('button').click(function Replicate(){
+var tcopy1 = $('#tableb').clone().attr('id', 'tableb_copy1');
+var tcopy2 = $('#tableb').clone().attr('id', 'tableb_copy2');
+var tcopy3 = $('#tableb').clone().attr('id', 'tableb_copy3');
+var tcopy4= $('#tableb').clone().attr('id', 'tableb_copy4');
+
+$('#replicate1').html(tcopy1);
+$('#replicate2').html(tcopy2);
+$('#replicate3').html(tcopy3);
+$('#replicate4').html(tcopy4); 
+
+$('#tableb_copy1 tr').find("td").eq(0).html(Name[0]);
+$('#tableb_copy1 tr').find("td").eq(1).html(Age[0]);
+$('#tableb_copy1 tr').find("td").eq(2).html(WorkArea[0]);
+$('#tableb_copy1 tr').find("td").eq(3).html(Dept[0]);
+$('#tableb_copy1 tr').find("td").eq(4).html(Year[0]);
+
+
+$('#tableb_copy2 tr').find("td").eq(0).html(Name[1]);
+$('#tableb_copy2 tr').find("td").eq(1).html(Age[1]);
+$('#tableb_copy2 tr').find("td").eq(2).html(WorkArea[1]);
+$('#tableb_copy2 tr').find("td").eq(3).html(Dept[1]);
+$('#tableb_copy2 tr').find("td").eq(4).html(Year[1]);
+
+
+$('#tableb_copy3 tr').find("td").eq(0).html(Name[2]);
+$('#tableb_copy3 tr').find("td").eq(1).html(Age[2]);
+$('#tableb_copy3 tr').find("td").eq(2).html(WorkArea[2]);
+$('#tableb_copy3 tr').find("td").eq(3).html(Dept[2]);
+$('#tableb_copy3 tr').find("td").eq(4).html(Year[2]);
+
+
+$('#tableb_copy4 tr').find("td").eq(0).html(Name[3]);
+$('#tableb_copy4 tr').find("td").eq(1).html(Age[3]);
+$('#tableb_copy4 tr').find("td").eq(2).html(WorkArea[3]);
+$('#tableb_copy4 tr').find("td").eq(3).html(Dept[3]);
+$('#tableb_copy4 tr').find("td").eq(4).html(Year[3]);
+
+$('#orginal').hide();});
+
+}
+});
+/*
+$(xml).find('MEMBERS').each(function(){
+var Name = $(this).find('NAME').text();
+var Age = $(this).find('AGE').text();
+var WorkArea = $(this).find('WORKAREA').text();
+var Dept = $(this).find('DEPT').text();
+var Year = $(this).find('YEAR').text();
+});
+
+error: function() {
+alert("The XML File could not be processed correctly.");
+}
+});*/
+});
+</script>
+</body>
+</html>
