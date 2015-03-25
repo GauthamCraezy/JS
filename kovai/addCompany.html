@@ -1,0 +1,41 @@
+<head>Add Company</head>
+<body>
+<h1>Add Company</h1>
+{{> addCompanyForm}}
+<br>
+<br>
+{{> companyDetails}}
+
+ 
+</body>
+
+  <template name="addCompanyForm">
+        <form>
+            <LABEL>Company Name</LABEL>
+            <input type="text" name="companyName">
+            <br><br>
+            <LABEL>logo url</LABEL>
+            <input type="text" name="logoUrl">
+            <br><br>
+            <LABEL>Short Descrition</LABEL>
+            <input type="text" name="shortDescription">
+            <br><br>
+            <LABEL>Company Type</LABEL>
+            <input type="text" name="companyType">
+            <br><br>
+            <input type="submit" value="addCompany">
+        </form>
+  </template>
+  
+  <template name="companyDetails">
+  <ul>
+      {{#each company}}
+        <li class="company">Name:{{name}}<br><br>
+          					Logo:{{logo}}<br><br>
+          					Type:{{type}}<br><br>
+          					Desc:{{shortDescription}}<br><br><br>
+        </li>
+        <br><br><br>
+      {{/each}}
+  </ul>
+  </template>
